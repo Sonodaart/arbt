@@ -146,7 +146,9 @@ class Bot:
 		for i in self.pairs:
 			if i["value"]<0.3:
 				break
-			self.positives.append([i["value"],f'{i["d1"]},{i["d2"]},{i["d3"]}'])
+			if i["value"]<100:
+				self.positives.append([i["value"],f'{i["d1"]},{i["d2"]},{i["d3"]}'])#({self.symValJ[i["d1"]+i["d2"]["bidPrice"]]},{self.symValJ[i["d1"]+i["d2"]["askPrice"]]})'])
+		
 		# end = time()
 		# print(f"time: {end-start}")
 
