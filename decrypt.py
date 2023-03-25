@@ -11,7 +11,7 @@ def decrypt(fileName):
 	with open(fileName,"rb") as file:
 		ctext = file.read()
 		text = fernet.decrypt(ctext)
-	with open(f'{fileName.split(".")[0]}.py', 'wb') as file:
+	with open(f'{fileName.split(".")[0]}.py'[1:], 'wb') as file:
 		file.write(text)
 
 files = ["cservice.cpy","cBot.cpy","cTrader.cpy"]
