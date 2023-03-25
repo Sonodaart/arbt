@@ -10,7 +10,7 @@ print("Loading crypted files...")
 def decrypt(fileName):
 	with open(fileName,"rb") as file:
 		ctext = file.read()
-		text = fernet.decrypt(text)
+		text = fernet.decrypt(ctext)
 	with open(f'{fileName.split(".")[0]}.py', 'wb') as file:
 		file.write(text)
 
